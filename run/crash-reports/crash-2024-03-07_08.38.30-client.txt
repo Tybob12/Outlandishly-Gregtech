@@ -1,0 +1,186 @@
+---- Minecraft Crash Report ----
+// Why is it breaking :(
+
+Time: 2024-03-07 08:38:30
+Description: Rendering overlay
+
+java.lang.IllegalStateException: Cannot get config value before config is loaded.
+This error is currently only thrown in the development environment, to avoid breaking published mods.
+In a future version, this will also throw in the production environment.
+
+	at com.google.common.base.Preconditions.checkState(Preconditions.java:502) ~[guava-31.1-jre.jar%23137!/:?] {}
+	at net.minecraftforge.common.ForgeConfigSpec$ConfigValue.get(ForgeConfigSpec.java:852) ~[forge-1.20.1-47.1.3-minecraft-merged-0b4babdd3d-1.20.1-loom.mappings.1_20_1.layered+hash.792725643-v2-forge-1.20.1-47.1.3.jar%23198%23205!/:?] {re:classloading,pl:unprotect:A}
+	at vazkii.botania.forge.ForgeBotaniaConfig$Client.splashesEnabled(ForgeBotaniaConfig.java:194) ~[Botania-1.20.1-443-FORGE.jar%23213!/:1.20.1-443-FORGE] {re:classloading}
+	at net.minecraft.client.resources.SplashManager.handler$zhf000$addSplashes(SplashManager.java:537) ~[forge-1.20.1-47.1.3-minecraft-merged-0b4babdd3d-1.20.1-loom.mappings.1_20_1.layered+hash.792725643-v2-forge-1.20.1-47.1.3.jar%23199!/:?] {re:mixin,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:botania_xplat.mixins.json:client.SplashManagerMixin,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.resources.SplashManager.apply(SplashManager.java:49) ~[forge-1.20.1-47.1.3-minecraft-merged-0b4babdd3d-1.20.1-loom.mappings.1_20_1.layered+hash.792725643-v2-forge-1.20.1-47.1.3.jar%23199!/:?] {re:mixin,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:botania_xplat.mixins.json:client.SplashManagerMixin,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.resources.SplashManager.apply(SplashManager.java:23) ~[forge-1.20.1-47.1.3-minecraft-merged-0b4babdd3d-1.20.1-loom.mappings.1_20_1.layered+hash.792725643-v2-forge-1.20.1-47.1.3.jar%23199!/:?] {re:mixin,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:botania_xplat.mixins.json:client.SplashManagerMixin,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.server.packs.resources.SimplePreparableReloadListener.method_18790(SimplePreparableReloadListener.java:13) ~[forge-1.20.1-47.1.3-minecraft-merged-0b4babdd3d-1.20.1-loom.mappings.1_20_1.layered+hash.792725643-v2-forge-1.20.1-47.1.3.jar%23199!/:?] {re:computing_frames,pl:accesstransformer:B,pl:unprotect:A,re:classloading,pl:accesstransformer:B,pl:unprotect:A,re:mixin,pl:accesstransformer:B,pl:unprotect:A}
+	at java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482) ~[?:?] {}
+	at net.minecraft.server.packs.resources.SimpleReloadInstance.method_18365(SimpleReloadInstance.java:69) ~[forge-1.20.1-47.1.3-minecraft-merged-0b4babdd3d-1.20.1-loom.mappings.1_20_1.layered+hash.792725643-v2-forge-1.20.1-47.1.3.jar%23199!/:?] {re:classloading,pl:unprotect:A}
+	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:156) ~[forge-1.20.1-47.1.3-minecraft-merged-0b4babdd3d-1.20.1-loom.mappings.1_20_1.layered+hash.792725643-v2-forge-1.20.1-47.1.3.jar%23199!/:?] {re:computing_frames,pl:accesstransformer:B,pl:unprotect:A,re:mixin,pl:accesstransformer:B,pl:unprotect:A,re:classloading,pl:accesstransformer:B,pl:unprotect:A}
+	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:23) ~[forge-1.20.1-47.1.3-minecraft-merged-0b4babdd3d-1.20.1-loom.mappings.1_20_1.layered+hash.792725643-v2-forge-1.20.1-47.1.3.jar%23199!/:?] {re:computing_frames,pl:unprotect:A,re:mixin,pl:unprotect:A,re:classloading,pl:unprotect:A}
+	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:130) ~[forge-1.20.1-47.1.3-minecraft-merged-0b4babdd3d-1.20.1-loom.mappings.1_20_1.layered+hash.792725643-v2-forge-1.20.1-47.1.3.jar%23199!/:?] {re:computing_frames,pl:accesstransformer:B,pl:unprotect:A,re:mixin,pl:accesstransformer:B,pl:unprotect:A,re:classloading,pl:accesstransformer:B,pl:unprotect:A}
+	at net.minecraft.util.thread.BlockableEventLoop.runAllTasks(BlockableEventLoop.java:115) ~[forge-1.20.1-47.1.3-minecraft-merged-0b4babdd3d-1.20.1-loom.mappings.1_20_1.layered+hash.792725643-v2-forge-1.20.1-47.1.3.jar%23199!/:?] {re:computing_frames,pl:accesstransformer:B,pl:unprotect:A,re:mixin,pl:accesstransformer:B,pl:unprotect:A,re:classloading,pl:accesstransformer:B,pl:unprotect:A}
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1106) ~[forge-1.20.1-47.1.3-minecraft-merged-0b4babdd3d-1.20.1-loom.mappings.1_20_1.layered+hash.792725643-v2-forge-1.20.1-47.1.3.jar%23199!/:?] {re:mixin,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:kubejs-common.mixins.json:MinecraftClientMixin,pl:mixin:APP:configuration.mixins.json:MinecraftMixin,pl:mixin:APP:gtceu.mixins.json:MinecraftMixin,pl:mixin:APP:architectury.mixins.json:MixinMinecraft,pl:mixin:APP:ae2.mixins.json:PickColorMixin,pl:mixin:APP:botania_xplat.mixins.json:client.MinecraftAccessor,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.run(Minecraft.java:718) ~[forge-1.20.1-47.1.3-minecraft-merged-0b4babdd3d-1.20.1-loom.mappings.1_20_1.layered+hash.792725643-v2-forge-1.20.1-47.1.3.jar%23199!/:?] {re:mixin,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:kubejs-common.mixins.json:MinecraftClientMixin,pl:mixin:APP:configuration.mixins.json:MinecraftMixin,pl:mixin:APP:gtceu.mixins.json:MinecraftMixin,pl:mixin:APP:architectury.mixins.json:MixinMinecraft,pl:mixin:APP:ae2.mixins.json:PickColorMixin,pl:mixin:APP:botania_xplat.mixins.json:client.MinecraftAccessor,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.main.Main.main(Main.java:218) ~[forge-1.20.1-47.1.3-minecraft-merged-0b4babdd3d-1.20.1-loom.mappings.1_20_1.layered+hash.792725643-v2-forge-1.20.1-47.1.3.jar%23199!/:?] {re:classloading,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?] {}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?] {}
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?] {}
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:111) ~[fmlloader-1.20.1-47.1.3.jar%23107!/:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:99) ~[fmlloader-1.20.1-47.1.3.jar%23107!/:?] {}
+	at net.minecraftforge.fml.loading.targets.ForgeClientUserdevLaunchHandler.devService(ForgeClientUserdevLaunchHandler.java:19) ~[fmlloader-1.20.1-47.1.3.jar%23107!/:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonDevLaunchHandler.lambda$makeService$7(CommonDevLaunchHandler.java:135) ~[fmlloader-1.20.1-47.1.3.jar%23107!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) ~[modlauncher-10.0.9.jar%23112!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) ~[modlauncher-10.0.9.jar%23112!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) ~[modlauncher-10.0.9.jar%23112!/:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:108) ~[modlauncher-10.0.9.jar%23112!/:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:78) ~[modlauncher-10.0.9.jar%23112!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) ~[modlauncher-10.0.9.jar%23112!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) ~[modlauncher-10.0.9.jar%23112!/:?] {}
+	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) ~[?:?] {}
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[dev-launch-injector-0.2.1+build.8.jar%23197!/:?] {}
+	at dev.architectury.transformer.TransformerRuntime.main(TransformerRuntime.java:219) ~[?:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at com.google.common.base.Preconditions.checkState(Preconditions.java:502) ~[guava-31.1-jre.jar%23137!/:?] {}
+	at net.minecraftforge.common.ForgeConfigSpec$ConfigValue.get(ForgeConfigSpec.java:852) ~[forge-1.20.1-47.1.3-minecraft-merged-0b4babdd3d-1.20.1-loom.mappings.1_20_1.layered+hash.792725643-v2-forge-1.20.1-47.1.3.jar%23198%23205!/:?] {re:classloading,pl:unprotect:A}
+	at vazkii.botania.forge.ForgeBotaniaConfig$Client.splashesEnabled(ForgeBotaniaConfig.java:194) ~[Botania-1.20.1-443-FORGE.jar%23213!/:1.20.1-443-FORGE] {re:classloading}
+	at net.minecraft.client.resources.SplashManager.handler$zhf000$addSplashes(SplashManager.java:537) ~[forge-1.20.1-47.1.3-minecraft-merged-0b4babdd3d-1.20.1-loom.mappings.1_20_1.layered+hash.792725643-v2-forge-1.20.1-47.1.3.jar%23199!/:?] {re:mixin,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:botania_xplat.mixins.json:client.SplashManagerMixin,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.resources.SplashManager.apply(SplashManager.java:49) ~[forge-1.20.1-47.1.3-minecraft-merged-0b4babdd3d-1.20.1-loom.mappings.1_20_1.layered+hash.792725643-v2-forge-1.20.1-47.1.3.jar%23199!/:?] {re:mixin,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:botania_xplat.mixins.json:client.SplashManagerMixin,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.resources.SplashManager.apply(SplashManager.java:23) ~[forge-1.20.1-47.1.3-minecraft-merged-0b4babdd3d-1.20.1-loom.mappings.1_20_1.layered+hash.792725643-v2-forge-1.20.1-47.1.3.jar%23199!/:?] {re:mixin,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:botania_xplat.mixins.json:client.SplashManagerMixin,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.server.packs.resources.SimplePreparableReloadListener.method_18790(SimplePreparableReloadListener.java:13) ~[forge-1.20.1-47.1.3-minecraft-merged-0b4babdd3d-1.20.1-loom.mappings.1_20_1.layered+hash.792725643-v2-forge-1.20.1-47.1.3.jar%23199!/:?] {re:computing_frames,pl:accesstransformer:B,pl:unprotect:A,re:classloading,pl:accesstransformer:B,pl:unprotect:A,re:mixin,pl:accesstransformer:B,pl:unprotect:A}
+	at java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482) ~[?:?] {}
+	at net.minecraft.server.packs.resources.SimpleReloadInstance.method_18365(SimpleReloadInstance.java:69) ~[forge-1.20.1-47.1.3-minecraft-merged-0b4babdd3d-1.20.1-loom.mappings.1_20_1.layered+hash.792725643-v2-forge-1.20.1-47.1.3.jar%23199!/:?] {re:classloading,pl:unprotect:A}
+	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:156) ~[forge-1.20.1-47.1.3-minecraft-merged-0b4babdd3d-1.20.1-loom.mappings.1_20_1.layered+hash.792725643-v2-forge-1.20.1-47.1.3.jar%23199!/:?] {re:computing_frames,pl:accesstransformer:B,pl:unprotect:A,re:mixin,pl:accesstransformer:B,pl:unprotect:A,re:classloading,pl:accesstransformer:B,pl:unprotect:A}
+	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:23) ~[forge-1.20.1-47.1.3-minecraft-merged-0b4babdd3d-1.20.1-loom.mappings.1_20_1.layered+hash.792725643-v2-forge-1.20.1-47.1.3.jar%23199!/:?] {re:computing_frames,pl:unprotect:A,re:mixin,pl:unprotect:A,re:classloading,pl:unprotect:A}
+	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:130) ~[forge-1.20.1-47.1.3-minecraft-merged-0b4babdd3d-1.20.1-loom.mappings.1_20_1.layered+hash.792725643-v2-forge-1.20.1-47.1.3.jar%23199!/:?] {re:computing_frames,pl:accesstransformer:B,pl:unprotect:A,re:mixin,pl:accesstransformer:B,pl:unprotect:A,re:classloading,pl:accesstransformer:B,pl:unprotect:A}
+-- Overlay render details --
+Details:
+	Overlay name: net.minecraftforge.client.loading.ForgeLoadingOverlay
+Stacktrace:
+	at net.minecraft.client.renderer.GameRenderer.render(GameRenderer.java:957) ~[forge-1.20.1-47.1.3-minecraft-merged-0b4babdd3d-1.20.1-loom.mappings.1_20_1.layered+hash.792725643-v2-forge-1.20.1-47.1.3.jar%23199!/:?] {re:classloading,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A,re:mixin,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1146) ~[forge-1.20.1-47.1.3-minecraft-merged-0b4babdd3d-1.20.1-loom.mappings.1_20_1.layered+hash.792725643-v2-forge-1.20.1-47.1.3.jar%23199!/:?] {re:mixin,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:kubejs-common.mixins.json:MinecraftClientMixin,pl:mixin:APP:configuration.mixins.json:MinecraftMixin,pl:mixin:APP:gtceu.mixins.json:MinecraftMixin,pl:mixin:APP:architectury.mixins.json:MixinMinecraft,pl:mixin:APP:ae2.mixins.json:PickColorMixin,pl:mixin:APP:botania_xplat.mixins.json:client.MinecraftAccessor,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.run(Minecraft.java:718) ~[forge-1.20.1-47.1.3-minecraft-merged-0b4babdd3d-1.20.1-loom.mappings.1_20_1.layered+hash.792725643-v2-forge-1.20.1-47.1.3.jar%23199!/:?] {re:mixin,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:kubejs-common.mixins.json:MinecraftClientMixin,pl:mixin:APP:configuration.mixins.json:MinecraftMixin,pl:mixin:APP:gtceu.mixins.json:MinecraftMixin,pl:mixin:APP:architectury.mixins.json:MixinMinecraft,pl:mixin:APP:ae2.mixins.json:PickColorMixin,pl:mixin:APP:botania_xplat.mixins.json:client.MinecraftAccessor,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.main.Main.main(Main.java:218) ~[forge-1.20.1-47.1.3-minecraft-merged-0b4babdd3d-1.20.1-loom.mappings.1_20_1.layered+hash.792725643-v2-forge-1.20.1-47.1.3.jar%23199!/:?] {re:classloading,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?] {}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?] {}
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?] {}
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:111) ~[fmlloader-1.20.1-47.1.3.jar%23107!/:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:99) ~[fmlloader-1.20.1-47.1.3.jar%23107!/:?] {}
+	at net.minecraftforge.fml.loading.targets.ForgeClientUserdevLaunchHandler.devService(ForgeClientUserdevLaunchHandler.java:19) ~[fmlloader-1.20.1-47.1.3.jar%23107!/:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonDevLaunchHandler.lambda$makeService$7(CommonDevLaunchHandler.java:135) ~[fmlloader-1.20.1-47.1.3.jar%23107!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) ~[modlauncher-10.0.9.jar%23112!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) ~[modlauncher-10.0.9.jar%23112!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) ~[modlauncher-10.0.9.jar%23112!/:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:108) ~[modlauncher-10.0.9.jar%23112!/:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:78) ~[modlauncher-10.0.9.jar%23112!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) ~[modlauncher-10.0.9.jar%23112!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) ~[modlauncher-10.0.9.jar%23112!/:?] {}
+	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) ~[?:?] {}
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[dev-launch-injector-0.2.1+build.8.jar%23197!/:?] {}
+	at dev.architectury.transformer.TransformerRuntime.main(TransformerRuntime.java:219) ~[?:?] {}
+
+
+-- Last reload --
+Details:
+	Reload number: 1
+	Reload reason: initial
+	Finished: No
+	Packs: gtceu:dynamic_assets, vanilla, KubeJS Resource Pack [assets]
+
+-- System Details --
+Details:
+	Minecraft Version: 1.20.1
+	Minecraft Version ID: 1.20.1
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 17.0.10, Eclipse Adoptium
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Eclipse Adoptium
+	Memory: 549415112 bytes (523 MiB) / 1960837120 bytes (1870 MiB) up to 4204789760 bytes (4010 MiB)
+	CPUs: 12
+	Processor Vendor: GenuineIntel
+	Processor Name: 13th Gen Intel(R) Core(TM) i5-1345U
+	Identifier: Intel64 Family 6 Model 186 Stepping 3
+	Microarchitecture: unknown
+	Frequency (GHz): 2.50
+	Number of physical packages: 1
+	Number of physical CPUs: 10
+	Number of logical CPUs: 12
+	Graphics card #0 name: Intel(R) Iris(R) Xe Graphics
+	Graphics card #0 vendor: Intel Corporation (0x8086)
+	Graphics card #0 VRAM (MB): 1024.00
+	Graphics card #0 deviceId: 0xa7a1
+	Graphics card #0 versionInfo: DriverVersion=31.0.101.4972
+	Memory slot #0 capacity (MB): 8192.00
+	Memory slot #0 clockSpeed (GHz): 3.20
+	Memory slot #0 type: DDR4
+	Memory slot #1 capacity (MB): 8192.00
+	Memory slot #1 clockSpeed (GHz): 3.20
+	Memory slot #1 type: DDR4
+	Virtual memory max (MB): 26788.70
+	Virtual memory used (MB): 12496.06
+	Swap memory total (MB): 10752.00
+	Swap memory used (MB): 123.10
+	JVM Flags: 0 total; 
+	Launched Version: MOD_DEV
+	Backend library: LWJGL version 3.3.1 build 7
+	Backend API: Intel(R) Iris(R) Xe Graphics GL version 4.6.0 - Build 31.0.101.4972, Intel
+	Window size: 854x480
+	GL Caps: Using framebuffer using OpenGL 3.2
+	GL debug messages: 
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'forge'
+	Type: Client (map_client.txt)
+	Graphics mode: fancy
+	Resource Packs: 
+	Current Language: en_us
+	CPU: 12x 13th Gen Intel(R) Core(TM) i5-1345U
+	ModLauncher: 10.0.9+10.0.9+main.dcd20f30
+	ModLauncher launch target: forgeclientuserdev
+	ModLauncher naming: mcp
+	ModLauncher services: 
+		mixin-patched-0.8.5.10.jar mixin PLUGINSERVICE 
+		eventbus-6.0.5.jar eventbus PLUGINSERVICE 
+		fmlloader-1.20.1-47.1.3.jar slf4jfixer PLUGINSERVICE 
+		fmlloader-1.20.1-47.1.3.jar object_holder_definalize PLUGINSERVICE 
+		fmlloader-1.20.1-47.1.3.jar runtime_enum_extender PLUGINSERVICE 
+		unprotect-1.2.0.jar unprotect PLUGINSERVICE 
+		fmlloader-1.20.1-47.1.3.jar capability_token_subclass PLUGINSERVICE 
+		accesstransformers-8.0.4.jar accesstransformer PLUGINSERVICE 
+		fmlloader-1.20.1-47.1.3.jar runtimedistcleaner PLUGINSERVICE 
+		modlauncher-10.0.9.jar mixin TRANSFORMATIONSERVICE 
+		modlauncher-10.0.9.jar fml TRANSFORMATIONSERVICE 
+		modlauncher-10.0.9.jar ArchitecturyMixinRemapperInjector TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		minecraft@1.0
+		lowcodefml@null
+		javafml@null
+	Mod List: 
+		forge-1.20.1-47.1.3-minecraft-merged-0b4babdd3d-1.|Minecraft                     |minecraft                     |1.20.1              |COMMON_SET|Manifest: NOSIGNATURE
+		mixinextras-forge-0.2.0.jar                       |MixinExtras                   |mixinextras                   |0.2.0               |COMMON_SET|Manifest: NOSIGNATURE
+		rhino-forge-2001.2.2-build.17.jar                 |Rhino                         |rhino                         |2001.2.2-build.17   |COMMON_SET|Manifest: NOSIGNATURE
+		main                                              |Outlandishly Gregtech         |otg                           |0.1.1               |COMMON_SET|Manifest: NOSIGNATURE
+		configuration-forge-1.20.1-2.2.0.jar              |Configuration                 |configuration                 |2.2.0               |COMMON_SET|Manifest: NOSIGNATURE
+		architectury-forge-9.1.12.jar                     |Architectury                  |architectury                  |9.1.12              |COMMON_SET|Manifest: NOSIGNATURE
+		ldlib-forge-1.20.1-1.0.23.a.jar                   |LowDragLib                    |ldlib                         |1.0.23.a            |COMMON_SET|Manifest: NOSIGNATURE
+		jei-1.20.1-forge-15.3.0.4.jar                     |Just Enough Items             |jei                           |15.3.0.4            |COMMON_SET|Manifest: NOSIGNATURE
+		kubejs-forge-2001.6.4-build.120.jar               |KubeJS                        |kubejs                        |2001.6.4-build.120  |COMMON_SET|Manifest: NOSIGNATURE
+		gtceu-1.20.1-1.1.3.b.jar                          |GregTech                      |gtceu                         |1.1.3.b             |COMMON_SET|Manifest: NOSIGNATURE
+		appliedenergistics2-forge-15.0.18.jar             |Applied Energistics 2         |ae2                           |15.0.18             |COMMON_SET|Manifest: NOSIGNATURE
+		Botania-1.20.1-443-FORGE.jar                      |Botania                       |botania                       |1.20.1-443-FORGE    |COMMON_SET|Manifest: NOSIGNATURE
+		                                                  |Forge                         |forge                         |47.1.3              |COMMON_SET|Manifest: NOSIGNATURE
+		curios-forge-5.5.0+1.20.1.jar                     |Curios API                    |curios                        |5.5.0+1.20.1        |COMMON_SET|Manifest: NOSIGNATURE
+		Patchouli-1.20.1-84-FORGE.jar                     |Patchouli                     |patchouli                     |1.20.1-84-FORGE     |COMMON_SET|Manifest: NOSIGNATURE
+	Crash Report UUID: ca84620a-603c-4621-acfe-a289889803f5
+	FML: 47.1
+	Forge: net.minecraftforge:47.1.3
