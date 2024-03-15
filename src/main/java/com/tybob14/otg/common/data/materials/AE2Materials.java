@@ -15,7 +15,12 @@ import static com.gregtechceu.gtceu.common.data.GTMaterials.CertusQuartz;
 public class AE2Materials {
 
     public static void init(){
-
+        dust.setIgnored(Skystone);
+        dust.setIgnored(Fluix);
+        gem.setIgnored(Fluix);
+        block.setIgnored(Fluix);
+        gem.setIgnored(CertusQuartz);
+        dust.setIgnored(CertusQuartz);
     }
 
     public static void modifyMaterials(){

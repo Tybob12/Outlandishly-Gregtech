@@ -11,10 +11,10 @@ import com.tybob14.otg.common.data.OTGCreativeModeTabs;
 import com.tybob14.otg.common.data.OTGMaterials;
 import com.tybob14.otg.common.data.materials.AE2Materials;
 import com.tybob14.otg.common.data.materials.BotaniaMaterials;
+import com.tybob14.otg.common.data.materials.IndustrialForegoingMaterials;
 import com.tybob14.otg.data.OTGDatagen;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -36,15 +36,15 @@ public class OutlandishlyGregtech {
     }
 
     private void onCommonSetup(FMLCommonSetupEvent event) {
+        if (Platform.isModLoaded("ae2")) AE2Materials.modifyMaterials();
         if (Platform.isModLoaded("botania")) BotaniaMaterials.modifyMaterials();
+        if (Platform.isModLoaded("industrialforegoing")) IndustrialForegoingMaterials.modifyMaterials();
     }
 
 
     public static void init() {
         OTGCreativeModeTabs.init();
-
         OTGDatagen.init();
-
         OTGRegistries.REGISTRATE.registerRegistrate();
     }
 
@@ -64,12 +64,12 @@ public class OutlandishlyGregtech {
         OTGMaterials.init();
         if (Platform.isModLoaded("ae2")) AE2Materials.init();
         if (Platform.isModLoaded("botania")) BotaniaMaterials.init();
+        if (Platform.isModLoaded("industrialforegoing")) IndustrialForegoingMaterials.init();
     }
 
     @SubscribeEvent
     public void modifyMaterials(PostMaterialEvent event) {
-        OTGMaterials.init();
-        if (Platform.isModLoaded("ae2")) AE2Materials.modifyMaterials();
+        OTGMaterials.modifyMaterials();
 
     }
 }

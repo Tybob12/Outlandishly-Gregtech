@@ -21,8 +21,6 @@ import java.util.function.Consumer;
 
 public class BotaniaRecipeAddition {
 
-
-
     public static void init(Consumer<FinishedRecipe> provider) {
         addBotaniaRecipes(provider);
     }

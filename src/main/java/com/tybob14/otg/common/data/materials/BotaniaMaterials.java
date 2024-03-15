@@ -15,7 +15,6 @@ import static com.gregtechceu.gtceu.api.data.tag.TagPrefix.*;
 
 public class BotaniaMaterials {
 
-
     public static void init(){
         ingot.setIgnored(Manasteel);
         block.setIgnored(Manasteel);
