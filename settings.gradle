@@ -4,8 +4,13 @@ pluginManagement {
         maven { url "https://maven.architectury.dev/" }
         maven { url "https://maven.minecraftforge.net/" }
         maven { url "https://maven.quiltmc.org/repository/release" }
+
         gradlePluginPortal()
     }
+}
+
+plugins {
+    id("org.gradle.toolchains.foojay-resolver-convention") version "0.5.0"
 }
 
 dependencyResolutionManagement {
@@ -17,17 +22,12 @@ dependencyResolutionManagement {
         def minecraftVersion = "1.20.1"
 
         // Mod Dependencies Versions
-        // Common
-        def reiVersion = "12.0.684"
-        def jeiVersion = "15.3.0.4"
-        def kjsVersion = "2001.6.4-build.120"
         def ae2Version = "15.0.18"
 
         // Forge
         def forgeVersion = "47.1.3"
         def registrateForgeVersion = "MC1.20-1.3.3"
         def topForgeVersion = "1.20.1-10.0.1-3"
-        def radiumVersion = "0.12.2+git.5f80f74"
 
         // Libs
         def quiltMappingsVersion = "5"  // https://lambdaurora.dev/tools/import_quilt.html
@@ -54,21 +54,8 @@ dependencyResolutionManagement {
             def registrate = version("registrate", registrateForgeVersion)
             library("registrate", "com.tterrag.registrate", "Registrate").versionRef(registrate)
 
-            def rei = version("rei", reiVersion)
-            library("rei-plugin", "me.shedaniel", "RoughlyEnoughItems-default-plugin-forge").versionRef(rei)
-            library("rei-api", "me.shedaniel", "RoughlyEnoughItems-api-forge").versionRef(rei)
-            library("rei-forge", "me.shedaniel", "RoughlyEnoughItems-forge").versionRef(rei)
-
-            def jei = version("jei", jeiVersion)
-            library("jei-plugin", "me.shedaniel", "RoughlyEnoughItems-default-plugin-forge").versionRef(rei)
-            library("jei-api", "me.shedaniel", "RoughlyEnoughItems-api-forge").versionRef(rei)
-            library("jei-forge", "me.shedaniel", "RoughlyEnoughItems-forge").versionRef(rei)
-
             def theoneprobe = version("theoneprobe", topForgeVersion)
             library("theoneprobe", "mcjty.theoneprobe", "theoneprobe").versionRef(theoneprobe)
-
-            def kubejs = version("kubejs", kjsVersion)
-            library("kubejs-forge", "dev.latvian.mods", "kubejs-forge").versionRef(kubejs)
 
             def gtceu = version("gtceu", gtCeuVersion)
             library("gtceu-forge", "com.gregtechceu.gtceu", "gtceu-${minecraftVersion}").versionRef(gtceu)
@@ -79,9 +66,6 @@ dependencyResolutionManagement {
             def mixinExtras = version("mixinExtras", mixinExtrasVersion)
             library("mixinExtras-common", "io.github.llamalad7", "mixinextras-common").versionRef(mixinExtras)
             library("mixinExtras-forge", "io.github.llamalad7", "mixinextras-forge").versionRef(mixinExtras)
-
-            def radium = version("radium", radiumVersion)
-            library("radium", "me.jellysquid.mods", "radium").versionRef(radium)
 
             def ae2 = version("ae2", ae2Version)
             library("ae2", "appeng", "appliedenergistics2-forge").versionRef(ae2)

@@ -11,6 +11,7 @@ import com.tybob14.otg.common.data.OTGCreativeModeTabs;
 import com.tybob14.otg.common.data.OTGMaterials;
 import com.tybob14.otg.common.data.materials.AE2Materials;
 import com.tybob14.otg.common.data.materials.BotaniaMaterials;
+import com.tybob14.otg.common.data.materials.EnderIOMaterials;
 import com.tybob14.otg.common.data.materials.IndustrialForegoingMaterials;
 import com.tybob14.otg.data.OTGDatagen;
 import net.minecraft.resources.ResourceLocation;
@@ -39,6 +40,7 @@ public class OutlandishlyGregtech {
         if (Platform.isModLoaded("ae2")) AE2Materials.modifyMaterials();
         if (Platform.isModLoaded("botania")) BotaniaMaterials.modifyMaterials();
         if (Platform.isModLoaded("industrialforegoing")) IndustrialForegoingMaterials.modifyMaterials();
+        if (Platform.isModLoaded("enderio")) EnderIOMaterials.modifyMaterials();
     }
 
 
@@ -65,6 +67,7 @@ public class OutlandishlyGregtech {
         if (Platform.isModLoaded("ae2")) AE2Materials.init();
         if (Platform.isModLoaded("botania")) BotaniaMaterials.init();
         if (Platform.isModLoaded("industrialforegoing")) IndustrialForegoingMaterials.init();
+        if (Platform.isModLoaded("enderio")) EnderIOMaterials.init();
     }
 
     @SubscribeEvent

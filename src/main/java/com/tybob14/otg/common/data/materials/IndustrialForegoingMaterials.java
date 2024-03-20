@@ -27,7 +27,6 @@ public class IndustrialForegoingMaterials {
             .color(0xC388BA)
             .ingot()
             .flags(MaterialFlags.NO_SMASHING, MaterialFlags.NO_SMELTING, MaterialFlags.NO_WORKING, MaterialFlags.NO_UNIFICATION )
-            //.components(GTMaterials.Iron, 2)
             .buildAndRegister();
 }
 
