@@ -1,5 +1,4 @@
 # Outlandishly Gregtech ![Minecraft Version](https://img.shields.io/badge/minecraft-1.20.1-blue) [![Discord](https://img.shields.io/discord/175740881389879296?label=discord&logo=discord&color=7289da)](https://discord.gg/qhM8gb7QtM)
-===
 
 ## About
 
