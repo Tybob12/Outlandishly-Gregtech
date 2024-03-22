@@ -31,7 +31,7 @@ public class AE2RecipeAddition {
 
     /**
      *
-     * Network Tool, Portable Cells, Wireless Terminal, Wireless Crafing Terminal, Storage Monitor, Conversion Monitor
+     * Network Tool, Portable Cells, Wireless Terminal, Wireless Crafing Terminal
      */
     public static void init(Consumer<FinishedRecipe> provider) {
         addAE2Recipes(provider);
@@ -251,8 +251,10 @@ public class AE2RecipeAddition {
         VanillaRecipeHelper.addShapedRecipe(provider, OutlandishlyGregtech.id("ae2/tools/color_applicator"), new ItemStack(COLOR_APPLICATOR), "AB ", "BC ", "  D", 'A', FORMATION_CORE, 'B', new UnificationEntry(rod, Aluminium), 'C', CELL_COMPONENT_4K, 'D', ENERGY_CELL);
         VanillaRecipeHelper.addShapedRecipe(provider, OutlandishlyGregtech.id("ae2/tools/matter_cannon"), new ItemStack(MATTER_CANNON), "AAB", "CD ", "A  ", 'A', new UnificationEntry(plate, Aluminium), 'B', FORMATION_CORE, 'C', CELL_COMPONENT_4K, 'D', ENERGY_CELL);
         VanillaRecipeHelper.addShapedRecipe(provider, OutlandishlyGregtech.id("ae2/tools/memory_card"), new ItemStack(MEMORY_CARD), "ABB", "CDC", 'A', CALCULATION_PROCESSOR, 'B', new UnificationEntry(plate, Aluminium), 'C', new UnificationEntry(plate, Gold), 'D', CustomTags.MV_CIRCUITS);
+        VanillaRecipeHelper.addShapedRecipe(provider, OutlandishlyGregtech.id("ae2/network/covered_dense_cable"), new ItemStack(COVERED_DENSE_CABLE.item(AEColor.TRANSPARENT)), "AA", "AA", 'A', COVERED_CABLE.item(AEColor.TRANSPARENT));
 
         VanillaRecipeHelper.addShapelessRecipe(provider, OutlandishlyGregtech.id("ae2/network/cable/fluix_smart_cable"), new ItemStack(SMART_CABLE.item(AEColor.TRANSPARENT)), COVERED_CABLE.item(AEColor.TRANSPARENT), new UnificationEntry(dust, Redstone), new UnificationEntry(dust, Glowstone));
+        VanillaRecipeHelper.addShapelessRecipe(provider, OutlandishlyGregtech.id("ae2/network/cable/fluix_dense_smart_cable"), new ItemStack(SMART_DENSE_CABLE.item(AEColor.TRANSPARENT)), COVERED_DENSE_CABLE.item(AEColor.TRANSPARENT), new UnificationEntry(dust, Redstone), new UnificationEntry(dust, Glowstone));
         VanillaRecipeHelper.addShapelessRecipe(provider, OutlandishlyGregtech.id("ae2/network/card/capacity_card"), new ItemStack(CAPACITY_CARD), new ItemStack(BASIC_CARD), new UnificationEntry(plate, CertusQuartz), CELL_COMPONENT_1K);
         VanillaRecipeHelper.addShapelessRecipe(provider, OutlandishlyGregtech.id("ae2/network/card/crafting_card"), new ItemStack(CRAFTING_CARD), new ItemStack(BASIC_CARD), Blocks.CRAFTING_TABLE, CELL_COMPONENT_1K);
         VanillaRecipeHelper.addShapelessRecipe(provider, OutlandishlyGregtech.id("ae2/network/card/equal_distribution_card"), new ItemStack(EQUAL_DISTRIBUTION_CARD), new ItemStack(ADVANCED_CARD), CustomTags.MV_CIRCUITS, CALCULATION_PROCESSOR);
@@ -280,6 +282,8 @@ public class AE2RecipeAddition {
         VanillaRecipeHelper.addShapelessRecipe(provider, OutlandishlyGregtech.id("ae2/network/storage_cell_4k"), new ItemStack(ITEM_CELL_4K), CELL_COMPONENT_4K, ITEM_CELL_HOUSING);
         VanillaRecipeHelper.addShapelessRecipe(provider, OutlandishlyGregtech.id("ae2/network/storage_cell_64k"), new ItemStack(ITEM_CELL_64K), CELL_COMPONENT_64K, ITEM_CELL_HOUSING);
         VanillaRecipeHelper.addShapelessRecipe(provider, OutlandishlyGregtech.id("ae2/network/toggle_bus_from_inverted"), new ItemStack(TOGGLE_BUS), INVERTED_TOGGLE_BUS);
+        VanillaRecipeHelper.addShapelessRecipe(provider, OutlandishlyGregtech.id("ae2/network/conversion_monitor"), new ItemStack(CONVERSION_MONITOR), ANNIHILATION_CORE, FORMATION_CORE, STORAGE_MONITOR);
+        VanillaRecipeHelper.addShapelessRecipe(provider, OutlandishlyGregtech.id("ae2/network/storage_monitor"), new ItemStack(STORAGE_MONITOR), SEMI_DARK_MONITOR, TOGGLE_BUS);
 
     }
 }

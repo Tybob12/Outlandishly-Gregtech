@@ -155,6 +155,13 @@ repositories {
     maven { url = 'https://maven.blamejared.com/' }
     maven { url = 'https://maven.theillusivec4.top/' }
     maven { url = 'https://www.cursemaven.com' }
+    maven { url = 'https://dogforce-games.com/maven' }
+    maven { url = 'https://maven.rover656.dev/releases' }
+
+    maven {
+        name = "TerraformersMC"
+        url = "https://maven.terraformersmc.com/"
+    }
 }
 
 dependencies {
@@ -177,9 +184,9 @@ dependencies {
 
     // JEI
     // compile against the JEI API but do not include it at runtime
-    compileOnly "mezz.jei:jei-${mc_version}-common-api:${jei_version}"
-    compileOnly "mezz.jei:jei-${mc_version}-forge-api:${jei_version}"
-    modImplementation "mezz.jei:jei-${mc_version}-forge:${jei_version}"
+    //compileOnly "mezz.jei:jei-${mc_version}-common-api:${jei_version}"
+    //compileOnly "mezz.jei:jei-${mc_version}-forge-api:${jei_version}"
+    //modImplementation "mezz.jei:jei-${mc_version}-forge:${jei_version}"
 
     // KJS
     //modImplementation forge.kubejs.forge
@@ -200,6 +207,9 @@ dependencies {
     // testing mods
     //modCompileOnly forge.radium
 
+    //compileOnly "dev.emi:emi-forge:${emi_version}:api"
+    modImplementation "dev.emi:emi-forge:${emi_version}"
+
     // AE2
     modImplementation(forge.ae2) { transitive = false }
 
@@ -211,6 +221,8 @@ dependencies {
     modImplementation 'com.hrznstudio:titanium:1.20.1-3.8.24'
     modImplementation 'com.buuz135:industrial-foregoing:1.20.1-3.5.9'
 
+    modImplementation 'dev.gigaherz.graph:GraphLib3:3.0.5'
+    modImplementation 'com.enderio:EnderIO:1.20.1-6.0.24-alpha'
 }
 
 processResources {
