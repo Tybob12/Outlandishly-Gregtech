@@ -20,6 +20,7 @@ public class EnderIORecipeRemoval {
         registry.accept(new ResourceLocation("enderio:alloy_smelting/soularium_ingot"));
         registry.accept(new ResourceLocation("enderio:alloy_smelting/end_steel_ingot"));
 
+
         registry.accept(new ResourceLocation("enderio:sag_milling"));
         registry.accept(new ResourceLocation("enderio:sag_milling/emerald_ore"));
         registry.accept(new ResourceLocation("enderio:sag_milling/redstone_ore"));
@@ -87,5 +88,10 @@ public class EnderIORecipeRemoval {
         registry.accept(new ResourceLocation("enderio:sag_milling/precient_crystal"));
         registry.accept(new ResourceLocation("enderio:sag_milling/pulsating_crystal"));
         registry.accept(new ResourceLocation("enderio:sag_milling/vibrant_crystal"));
+
+        registry.accept(new ResourceLocation("enderio:wood_gear"));
+        registry.accept(new ResourceLocation("enderio:stone_gear"));
+        registry.accept(new ResourceLocation("enderio:iron_gear"));
+        registry.accept(new ResourceLocation("enderio:wood_gear_corner"));
     }
 }

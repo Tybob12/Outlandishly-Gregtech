@@ -34,10 +34,6 @@ public class AE2RecipeAddition {
      * Network Tool, Portable Cells, Wireless Terminal, Wireless Crafing Terminal
      */
     public static void init(Consumer<FinishedRecipe> provider) {
-        addAE2Recipes(provider);
-    }
-    private static void addAE2Recipes(Consumer<FinishedRecipe> provider) {
-
         ASSEMBLER_RECIPES.recipeBuilder("ae2/decorative/certus_quartz_glass").duration(20).EUt(GTValues.V[LV]).outputItems(new ItemStack(QUARTZ_GLASS, 2)).inputItems(new UnificationEntry(dust, CertusQuartz), 4).inputFluids(Glass.getFluid(576)).save(provider);
         ASSEMBLER_RECIPES.recipeBuilder("ae2/decorative/light_detector").duration(200).EUt(GTValues.V[MV]).outputItems(new ItemStack(LIGHT_DETECTOR, 2)).inputItems(new UnificationEntry(rod, Aluminium)).inputItems(new UnificationEntry(plate, NetherQuartz)).save(provider);
         ASSEMBLER_RECIPES.recipeBuilder("ae2/decorative/nether_quartz_glass").duration(20).EUt(GTValues.V[LV]).outputItems(new ItemStack(QUARTZ_GLASS, 2)).inputItems(new UnificationEntry(dust, NetherQuartz), 4).inputFluids(Glass.getFluid(576)).save(provider);

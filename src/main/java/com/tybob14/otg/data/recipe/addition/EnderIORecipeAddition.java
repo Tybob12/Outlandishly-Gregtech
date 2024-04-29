@@ -5,6 +5,7 @@ import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.data.chemical.ChemicalHelper;
 import com.gregtechceu.gtceu.api.data.chemical.material.stack.UnificationEntry;
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
+import com.tybob14.otg.OutlandishlyGregtech;
 import com.tybob14.otg.common.data.materials.EnderIOMaterials;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.item.ItemStack;
@@ -20,10 +21,8 @@ import java.util.function.Consumer;
 public class EnderIORecipeAddition {
 
     public static void init(Consumer<FinishedRecipe> provider) {
-        addEnderIORecipes(provider);
-    }
-    private static void addEnderIORecipes(Consumer<FinishedRecipe> provider) {
-        ALLOY_SMELTER_RECIPES.recipeBuilder("enderio/copper_alloy_ingot").duration(200).EUt(GTValues.V[LV]).outputItems(ChemicalHelper.get(TagPrefix.ingot, EnderIOMaterials.CopperAlloy)).inputItems(new UnificationEntry(ingot, Copper)).inputItems(new UnificationEntry(dust, Silicon)).save(provider);
+
+        ALLOY_SMELTER_RECIPES.recipeBuilder(OutlandishlyGregtech.id("enderio/copper_alloy_ingot")).duration(200).EUt(GTValues.V[LV]).outputItems(ChemicalHelper.get(TagPrefix.ingot, EnderIOMaterials.CopperAlloy)).inputItems(new UnificationEntry(ingot, Copper)).inputItems(new UnificationEntry(dust, Silicon)).save(provider);
         ALLOY_SMELTER_RECIPES.recipeBuilder("enderio/pulsating_alloy_ingot").duration(200).EUt(GTValues.V[LV]).outputItems(ChemicalHelper.get(TagPrefix.ingot, EnderIOMaterials.PulsatingAlloy)).inputItems(new UnificationEntry(ingot, Iron)).inputItems(new UnificationEntry(dust, EnderPearl)).save(provider);
         ALLOY_SMELTER_RECIPES.recipeBuilder("enderio/soularium_ingot").duration(200).EUt(GTValues.V[LV]).outputItems(ChemicalHelper.get(TagPrefix.ingot, EnderIOMaterials.Soularium)).inputItems(new UnificationEntry(ingot, Gold)).inputItems(new ItemStack(Blocks.SOUL_SAND, 2)).save(provider);
         ALLOY_SMELTER_RECIPES.recipeBuilder("enderio/redstone_alloy_ingot").duration(200).EUt(GTValues.V[LV]).outputItems(ChemicalHelper.get(TagPrefix.ingot, EnderIOMaterials.RedstoneAlloy)).inputItems(new UnificationEntry(ingot, Iron)).inputItems(new UnificationEntry(dust, Redstone), 2).save(provider);

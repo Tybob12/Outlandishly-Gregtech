@@ -2,6 +2,7 @@ package com.tybob14.otg.common.data;
 
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
+import com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialFlags;
 import com.gregtechceu.gtceu.api.data.chemical.material.properties.BlastProperty;
 import com.gregtechceu.gtceu.api.data.chemical.material.properties.FluidProperty;
 import com.gregtechceu.gtceu.api.data.chemical.material.properties.PropertyKey;
@@ -23,6 +24,7 @@ public class OTGMaterials {
 
     public static void modifyMaterials(){
         GTMaterials.EnderPearl.setProperty(PropertyKey.FLUID, new FluidProperty());
+        GTMaterials.Gold.addFlags(MaterialFlags.GENERATE_GEAR);
     }
 
     static {REGISTRATE.creativeModeTab(() -> OTGCreativeModeTabs.OTG);}

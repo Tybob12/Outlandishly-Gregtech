@@ -23,7 +23,6 @@ public class OTGRecipes {
 
     }
     public static void removedInit(Consumer<ResourceLocation> provider) {
-
         if (Platform.isModLoaded("ae2")) AE2RecipeRemoval.init(provider);
         if (Platform.isModLoaded("botania")) BotaniaRecipeRemoval.init(provider);
         if (Platform.isModLoaded("industrialforegoing")) IndustrialForegoingRemoval.init(provider);

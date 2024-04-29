@@ -2,6 +2,10 @@ package com.tybob14.otg;
 
 import appeng.core.definitions.AEBlocks;
 import appeng.core.definitions.AEItems;
+import com.buuz135.industrial.block.generator.mycelial.FurnaceGeneratorType;
+import com.buuz135.industrial.block.generator.mycelial.IMycelialGeneratorType;
+import com.buuz135.industrial.module.ModuleCore;
+import com.buuz135.industrial.module.ModuleGenerator;
 import com.enderio.base.common.init.EIOItems;
 import com.lowdragmc.lowdraglib.Platform;
 import dev.emi.emi.api.EmiEntrypoint;
@@ -100,6 +104,29 @@ public class OTGEMI implements EmiPlugin {
             registry.removeEmiStacks(EmiStack.of(EIOItems.WITHERING_POWDER));
             registry.removeEmiStacks(EmiStack.of(EIOItems.FLOUR));
             registry.removeEmiStacks(EmiStack.of(EIOItems.SILICON));
+            registry.removeEmiStacks(EmiStack.of(EIOItems.GEAR_WOOD));
+            registry.removeEmiStacks(EmiStack.of(EIOItems.GEAR_STONE));
+            registry.removeEmiStacks(EmiStack.of(EIOItems.GEAR_IRON));
         }
+
+        if (Platform.isModLoaded("industrialforegoing")) {
+            registry.removeEmiStacks(EmiStack.of(ModuleGenerator.PITIFUL_GENERATOR.getKey().get()));
+            registry.removeEmiStacks(EmiStack.of(ModuleGenerator.BIOFUEL_GENERATOR.getKey().get()));
+            registry.removeEmiStacks(EmiStack.of(ModuleGenerator.MYCELIAL_REACTOR.getKey().get()));
+            for (int i = 1; i < IMycelialGeneratorType.TYPES.size(); i++){
+                registry.removeEmiStacks(EmiStack.of(ModuleGenerator.MYCELIAL_GENERATORS.get(i).getKey().get()));
+            }
+            registry.removeEmiStacks(EmiStack.of(ModuleCore.DISSOLUTION_CHAMBER.getKey().get()));
+            registry.removeEmiStacks(EmiStack.of(ModuleCore.LATEX_PROCESSING.getKey().get()));
+            registry.removeEmiStacks(EmiStack.of(ModuleCore.DIAMOND_GEAR.get()));
+            registry.removeEmiStacks(EmiStack.of(ModuleCore.GOLD_GEAR.get()));
+            registry.removeEmiStacks(EmiStack.of(ModuleCore.IRON_GEAR.get()));
+
+            registry.removeEmiStacks(EmiStack.of(ModuleCore.TINY_DRY_RUBBER.get()));
+            registry.removeEmiStacks(EmiStack.of(ModuleCore.DRY_RUBBER.get()));
+            //registry.removeEmiStacks(EmiStack.of(ModuleCore.PLASTIC.get()));
+
+        }
+
     }
 }

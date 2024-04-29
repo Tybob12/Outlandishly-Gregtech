@@ -13,7 +13,6 @@ import static com.gregtechceu.gtceu.api.data.tag.TagPrefix.*;
 import static com.gregtechceu.gtceu.common.data.GTMaterials.CertusQuartz;
 
 public class AE2Materials {
-
     public static void init(){
         dust.setIgnored(Skystone);
         dust.setIgnored(Fluix);

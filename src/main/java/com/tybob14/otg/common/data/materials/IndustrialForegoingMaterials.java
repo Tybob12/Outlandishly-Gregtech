@@ -3,6 +3,8 @@ package com.tybob14.otg.common.data.materials;
 import com.buuz135.industrial.module.ModuleCore;
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
 import com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialFlags;
+import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
+import com.gregtechceu.gtceu.common.data.GTMaterials;
 import com.tybob14.otg.OutlandishlyGregtech;
 
 import static com.gregtechceu.gtceu.api.data.tag.TagPrefix.*;
