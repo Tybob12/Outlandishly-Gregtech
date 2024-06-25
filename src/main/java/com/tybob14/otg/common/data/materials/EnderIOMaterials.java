@@ -46,33 +46,34 @@ public class EnderIOMaterials {
     }
 
     public static void modifyMaterials(){
-        ingot.setIgnored(CopperAlloy, EIOItems.COPPER_ALLOY_INGOT);
-        block.setIgnored(CopperAlloy, EIOBlocks.COPPER_ALLOY_BLOCK);
-        nugget.setIgnored(CopperAlloy, EIOItems.COPPER_ALLOY_NUGGET);
-        ingot.setIgnored(EnergeticAlloy, EIOItems.ENERGETIC_ALLOY_INGOT);
-        block.setIgnored(EnergeticAlloy, EIOBlocks.ENERGETIC_ALLOY_BLOCK);
-        nugget.setIgnored(EnergeticAlloy, EIOItems.ENERGETIC_ALLOY_NUGGET);
-        ingot.setIgnored(VibrantAlloy, EIOItems.VIBRANT_ALLOY_INGOT);
-        block.setIgnored(VibrantAlloy, EIOBlocks.VIBRANT_ALLOY_BLOCK);
-        nugget.setIgnored(VibrantAlloy, EIOItems.VIBRANT_ALLOY_NUGGET);
-        ingot.setIgnored(RedstoneAlloy, EIOItems.REDSTONE_ALLOY_INGOT);
-        block.setIgnored(RedstoneAlloy, EIOBlocks.REDSTONE_ALLOY_BLOCK);
-        nugget.setIgnored(RedstoneAlloy, EIOItems.REDSTONE_ALLOY_NUGGET);
-        ingot.setIgnored(ConductiveAlloy, EIOItems.CONDUCTIVE_ALLOY_INGOT);
-        block.setIgnored(ConductiveAlloy, EIOBlocks.CONDUCTIVE_ALLOY_BLOCK);
-        nugget.setIgnored(ConductiveAlloy, EIOItems.CONDUCTIVE_ALLOY_NUGGET);
-        ingot.setIgnored(PulsatingAlloy, EIOItems.PULSATING_ALLOY_INGOT);
-        block.setIgnored(PulsatingAlloy, EIOBlocks.PULSATING_ALLOY_BLOCK);
-        nugget.setIgnored(PulsatingAlloy, EIOItems.PULSATING_ALLOY_NUGGET);
-        ingot.setIgnored(DarKSteel, EIOItems.DARK_STEEL_INGOT);
-        block.setIgnored(DarKSteel, EIOBlocks.DARK_STEEL_BLOCK);
-        nugget.setIgnored(DarKSteel, EIOItems.DARK_STEEL_NUGGET);
-        ingot.setIgnored(Soularium, EIOItems.SOULARIUM_INGOT);
-        block.setIgnored(Soularium, EIOBlocks.SOULARIUM_BLOCK);
-        nugget.setIgnored(Soularium, EIOItems.SOULARIUM_NUGGET);
-        ingot.setIgnored(EndSteel, EIOItems.END_STEEL_INGOT);
-        block.setIgnored(EndSteel, EIOBlocks.END_STEEL_BLOCK);
-        nugget.setIgnored(EndSteel, EIOItems.END_STEEL_NUGGET);
+        ingot.setIgnored(CopperAlloy, EIOItems.COPPER_ALLOY_INGOT.asItem());
+        ingot.setIgnored(CopperAlloy, EIOItems.COPPER_ALLOY_INGOT.asItem());
+        block.setIgnored(CopperAlloy, EIOBlocks.COPPER_ALLOY_BLOCK.asItem());
+        nugget.setIgnored(CopperAlloy, EIOItems.COPPER_ALLOY_NUGGET.asItem());
+        ingot.setIgnored(EnergeticAlloy, EIOItems.ENERGETIC_ALLOY_INGOT.asItem());
+        block.setIgnored(EnergeticAlloy, EIOBlocks.ENERGETIC_ALLOY_BLOCK.asItem());
+        nugget.setIgnored(EnergeticAlloy, EIOItems.ENERGETIC_ALLOY_NUGGET.asItem());
+        ingot.setIgnored(VibrantAlloy, EIOItems.VIBRANT_ALLOY_INGOT.asItem());
+        block.setIgnored(VibrantAlloy, EIOBlocks.VIBRANT_ALLOY_BLOCK.asItem());
+        nugget.setIgnored(VibrantAlloy, EIOItems.VIBRANT_ALLOY_NUGGET.asItem());
+        ingot.setIgnored(RedstoneAlloy, EIOItems.REDSTONE_ALLOY_INGOT.asItem());
+        block.setIgnored(RedstoneAlloy, EIOBlocks.REDSTONE_ALLOY_BLOCK.asItem());
+        nugget.setIgnored(RedstoneAlloy, EIOItems.REDSTONE_ALLOY_NUGGET.asItem());
+        ingot.setIgnored(ConductiveAlloy, EIOItems.CONDUCTIVE_ALLOY_INGOT.asItem());
+        block.setIgnored(ConductiveAlloy, EIOBlocks.CONDUCTIVE_ALLOY_BLOCK.asItem());
+        nugget.setIgnored(ConductiveAlloy, EIOItems.CONDUCTIVE_ALLOY_NUGGET.asItem());
+        ingot.setIgnored(PulsatingAlloy, EIOItems.PULSATING_ALLOY_INGOT.asItem());
+        block.setIgnored(PulsatingAlloy, EIOBlocks.PULSATING_ALLOY_BLOCK.asItem());
+        nugget.setIgnored(PulsatingAlloy, EIOItems.PULSATING_ALLOY_NUGGET.asItem());
+        ingot.setIgnored(DarKSteel, EIOItems.DARK_STEEL_INGOT.asItem());
+        block.setIgnored(DarKSteel, EIOBlocks.DARK_STEEL_BLOCK.asItem());
+        nugget.setIgnored(DarKSteel, EIOItems.DARK_STEEL_NUGGET.asItem());
+        ingot.setIgnored(Soularium, EIOItems.SOULARIUM_INGOT.asItem());
+        block.setIgnored(Soularium, EIOBlocks.SOULARIUM_BLOCK.asItem());
+        nugget.setIgnored(Soularium, EIOItems.SOULARIUM_NUGGET.asItem());
+        ingot.setIgnored(EndSteel, EIOItems.END_STEEL_INGOT.asItem());
+        block.setIgnored(EndSteel, EIOBlocks.END_STEEL_BLOCK.asItem());
+        nugget.setIgnored(EndSteel, EIOItems.END_STEEL_NUGGET.asItem());
     }
 
 
